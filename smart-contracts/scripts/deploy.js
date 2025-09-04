@@ -1,6 +1,10 @@
 const main = async () => {
   const [deployer] = await hre.ethers.getSigners();
   
+  if (!deployer) {
+    throw new Error("No deployer account found. Check your private key in .env file");
+  }
+  
   console.log("Deploying contracts with the account:", deployer.address);
   console.log("Account balance:", (await deployer.getBalance()).toString());
   console.log("Network:", hre.network.name);
