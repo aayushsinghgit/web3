@@ -13,8 +13,16 @@ export default defineConfig({
       },
     }),
   ],
+  resolve: {
+    alias: {
+      util: 'util'
+    }
+  },
   define: {
     'process.env': {}
+  },
+  optimizeDeps: {
+    include: ['web3modal', '@walletconnect/web3-provider', 'ethers']
   },
   build: {
     chunkSizeWarningLimit: 1100,
