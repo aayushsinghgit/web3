@@ -31,7 +31,7 @@ export function About() {
   };
 
   return (
-    <div ref={containerRef} className="bg-[--bg-primary] min-h-screen pt-24 pb-20 px-4 overflow-hidden selection:bg-[--brand] selection:text-white">
+    <div ref={containerRef} className="bg-[--bg-primary] min-h-screen pt-20 md:pt-24 pb-20 px-4 md:px-6 overflow-hidden selection:bg-[--brand] selection:text-white">
       <div className="max-w-7xl mx-auto">
         
         {/* Hero Section */}
@@ -45,7 +45,7 @@ export function About() {
               <div className="w-[700px] h-[700px] bg-[--brand]/10 blur-[180px] rounded-full animate-pulse" />
            </div>
            
-           <h1 className="text-2xl md:text-5xl md:text-7xl font-black text-[--text-primary] max-w-5xl leading-[1.1] tracking-tighter mb-8 md:mb-16 italic">
+           <h1 className="text-xl sm:text-3xl md:text-7xl font-black text-[--text-primary] max-w-5xl leading-[1.1] tracking-tighter mb-8 md:mb-16 italic">
              "We didn't build just another wallet. We built a bridge to the future of decentralized finance."
            </h1>
            
@@ -72,10 +72,10 @@ export function About() {
              whileInView={{ opacity: 1, x: 0 }}
              viewport={{ once: true }}
              transition={{ duration: 1 }}
-             className="sticky top-40"
+             className="md:sticky md:top-40 mb-10 md:mb-0"
            >
-              <h2 className="text-3xl md:text-6xl font-black text-[--text-primary] tracking-tighter mb-8 leading-[0.9]">Our DNA is <br /> <span className="text-[--brand]">Decentralized.</span></h2>
-              <p className="text-[--text-muted] text-xl leading-relaxed font-medium max-w-sm">
+              <h2 className="text-3xl md:text-6xl font-black text-[--text-primary] tracking-tighter mb-6 md:mb-8 leading-[0.9]">Our DNA is <br /> <span className="text-[--brand]">Decentralized.</span></h2>
+              <p className="text-[--text-muted] text-lg md:text-xl leading-relaxed font-medium max-w-sm">
                 Vaulta is built on three core pillars that define every decision we make and every line of code we write.
               </p>
            </motion.div>
@@ -96,16 +96,16 @@ export function About() {
                   key={i} 
                   variants={itemVariants}
                   whileHover={{ x: 10, backgroundColor: 'var(--surface-hover)' }}
-                  className="group bg-[--surface] border border-[--border] p-6 md:p-12 rounded-[3.5rem] transition-all flex flex-col md:flex-row items-start gap-10"
+                  className="group bg-[--surface] border border-[--border] p-8 md:p-12 rounded-[2.5rem] md:rounded-[3.5rem] transition-all flex flex-col md:flex-row items-start gap-8 md:gap-10"
                 >
-                   <div className="w-16 h-16 bg-[--bg-primary] border border-[--border] rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                   <div className="w-14 h-14 md:w-16 md:h-16 bg-[--bg-primary] border border-[--border] rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                       {item.icon}
                    </div>
                    <div>
-                      <h3 className="text-[--text-primary] text-3xl font-black mb-4 tracking-tight">{item.title}</h3>
-                      <p className="text-[--text-muted] text-lg leading-relaxed mb-8 font-medium">{item.desc}</p>
-                      <button className="flex items-center gap-3 text-[--text-muted]/40 group-hover:text-[--brand] font-black text-[10px] uppercase tracking-[0.3em] transition-all">
-                         Read Mission <ArrowRight size={16} />
+                      <h3 className="text-[--text-primary] text-2xl md:text-3xl font-black mb-4 tracking-tight">{item.title}</h3>
+                      <p className="text-[--text-muted] text-base md:text-lg leading-relaxed mb-6 md:mb-8 font-medium">{item.desc}</p>
+                      <button className="flex items-center gap-3 text-[--text-muted]/40 group-hover:text-[--brand] font-black text-[8px] md:text-[10px] uppercase tracking-[0.3em] transition-all">
+                         Read Mission <ArrowRight size={14} className="md:w-4" />
                       </button>
                    </div>
                 </motion.div>
@@ -169,21 +169,21 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] as any }}
-          className="relative py-24 bg-[--surface] border border-[--border] rounded-[5rem] flex flex-col items-center text-center overflow-hidden group"
+          className="relative py-20 md:py-24 bg-[--surface] border border-[--border] rounded-[3rem] md:rounded-[5rem] flex flex-col items-center text-center overflow-hidden group"
         >
-           <div className="absolute inset-0 -z-10 flex items-center justify-center">
+           <div className="absolute inset-0 -z-10 flex items-center justify-center overflow-hidden">
               <motion.div 
                 style={{ y }}
-                className="text-[25rem] font-black text-[--text-muted]/5 tracking-tighter select-none"
+                className="text-[12rem] md:text-[25rem] font-black text-[--text-muted]/5 tracking-tighter select-none"
               >
                 VAULTA
               </motion.div>
            </div>
            
-           <h2 className="text-3xl md:text-6xl md:text-8xl font-black text-[--text-primary] mb-10 tracking-tighter leading-[0.9] relative z-10">
+           <h2 className="text-4xl sm:text-6xl md:text-8xl font-black text-[--text-primary] mb-8 md:mb-10 tracking-tighter leading-[0.9] relative z-10 px-4">
               Command Web3. <br /> Your Way.
            </h2>
-           <p className="text-[--text-muted] text-xl md:text-2xl mb-16 max-w-2xl font-medium relative z-10 leading-relaxed px-4">
+           <p className="text-[--text-muted] text-base md:text-2xl mb-12 md:mb-16 max-w-2xl font-medium relative z-10 leading-relaxed px-6">
              Go beyond seed phrases. Go beyond limitations. <br /> Step into the dark with clarity.
            </p>
             <div className="flex flex-col sm:flex-row gap-6 relative z-10 w-full justify-center px-8">

@@ -62,7 +62,7 @@ export function Fundraiser() {
   };
 
   return (
-    <div ref={containerRef} className="bg-[--bg-primary] min-h-screen pt-24 pb-20 px-4 overflow-hidden">
+    <div ref={containerRef} className="bg-[--bg-primary] min-h-screen pt-20 md:pt-24 pb-20 px-4 md:px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
 
         {/* Hero */}
@@ -73,13 +73,13 @@ export function Fundraiser() {
           className="grid lg:grid-cols-2 gap-6 md:gap-8 items-center mb-10 md:mb-20"
         >
           <div>
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[--brand]/30 bg-[--brand]/10 text-[--brand] text-[10px] font-black uppercase tracking-widest mb-10">
+            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[--brand]/30 bg-[--brand]/10 text-[--brand] text-[8px] md:text-[10px] font-black uppercase tracking-widest mb-6 md:mb-10">
               <Heart size={14} /> Community Fund
             </motion.div>
-            <motion.h1 variants={itemVariants} className="text-4xl md:text-9xl font-black text-[--text-primary] mb-10 tracking-tighter leading-[0.8]">
+            <motion.h1 variants={itemVariants} className="text-4xl sm:text-6xl md:text-9xl font-black text-[--text-primary] mb-6 md:mb-10 tracking-tighter leading-[0.8]">
               Lift up a <br /> <span className="text-[--text-muted]/40">Friend.</span>
             </motion.h1>
-            <motion.p variants={itemVariants} className="text-[--text-muted] text-xl md:text-2xl max-w-lg mb-16 leading-relaxed font-medium">
+            <motion.p variants={itemVariants} className="text-[--text-muted] text-lg md:text-2xl max-w-lg mb-10 md:mb-16 leading-relaxed font-medium">
               Vaulta Fundraiser allows you to launch community projects or personal drives directly on-chain. Transparent, secure, and boundary-less.
             </motion.p>
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6">
@@ -99,13 +99,13 @@ export function Fundraiser() {
           </div>
           <motion.div
             style={{ y: y1 }}
-            className="relative"
+            className="relative hidden lg:block"
           >
             <div className="absolute -inset-10 bg-[--brand]/20 blur-[120px] rounded-full opacity-30 animate-pulse" />
-            <div className="relative aspect-square rounded-[4.5rem] overflow-hidden border border-[--border] group">
+            <div className="relative aspect-square rounded-[2rem] md:rounded-[4.5rem] overflow-hidden border border-[--border] group">
               <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=1200" className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-[2s]" alt="Fundraiser" />
               <div className="absolute inset-0 bg-gradient-to-t from-[--bg-primary] via-transparent to-transparent flex items-end p-6 md:p-12">
-                <div className="flex items-center gap-10">
+                <div className="flex items-center gap-6 md:gap-10">
                   <motion.div style={{ y: y2 }}>
                     <p className="text-[--text-primary] text-2xl md:text-5xl font-black tracking-tighter tabular-nums">1.2K+</p>
                     <p className="text-[--text-muted] text-[10px] font-black uppercase tracking-[0.3em] mt-2">Active Projects</p>
@@ -129,13 +129,13 @@ export function Fundraiser() {
           transition={{ duration: 1 }}
           className="mb-20"
         >
-          <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-20">
+          <div className="flex flex-col md:flex-row justify-between items-end gap-6 md:gap-8 mb-12 md:mb-20">
             <div>
-              <h2 className="text-[--text-primary] text-3xl md:text-6xl font-black tracking-tighter mb-4">Explore Projects</h2>
-              <p className="text-[--text-muted] text-lg font-medium">Discover impactful projects verified by the community.</p>
+              <h2 className="text-[--text-primary] text-2xl md:text-6xl font-black tracking-tighter mb-2 md:mb-4">Explore Projects</h2>
+              <p className="text-[--text-muted] text-sm md:text-lg font-medium">Discover impactful projects verified by the community.</p>
             </div>
-            <button className="flex items-center gap-3 text-[--brand] font-black uppercase tracking-[0.3em] text-xs group">
-              View All <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+            <button className="flex items-center gap-3 text-[--brand] font-black uppercase tracking-[0.3em] text-[10px] md:text-xs group">
+              View All <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
             </button>
           </div>
 
@@ -165,8 +165,8 @@ export function Fundraiser() {
                     </div>
                   )}
                 </div>
-                <div className="p-10">
-                  <h3 className="text-[--text-primary] text-2xl font-black mb-8 tracking-tight group-hover:text-[--brand] transition-colors line-clamp-1">{p.title}</h3>
+                 <div className="p-6 md:p-10">
+                  <h3 className="text-[--text-primary] text-xl md:text-2xl font-black mb-6 md:mb-8 tracking-tight group-hover:text-[--brand] transition-colors line-clamp-1">{p.title}</h3>
                   <div className="space-y-6">
                     <div className="flex justify-between text-[10px] font-black uppercase tracking-widest">
                       <span className="text-[--text-muted]">Raised: <span className="text-[--brand] tabular-nums">{p.totalRaised || p.raised} ETH</span></span>
@@ -211,13 +211,13 @@ export function Fundraiser() {
                 bg: "bg-blue-400/10"
               }
             ].map((feature, i) => (
-              <motion.div
+               <motion.div
                 key={i}
                 initial={{ opacity: 0, x: i === 0 ? -30 : 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] as any }}
-                className="bg-[--surface] border border-[--border] rounded-[4.5rem] p-6 md:p-12 md:p-12 hover:bg-white/[0.05] transition-all group overflow-hidden relative"
+                className="bg-[--surface] border border-[--border] rounded-[2rem] md:rounded-[4.5rem] p-8 md:p-12 hover:bg-white/[0.05] transition-all group overflow-hidden relative"
               >
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 blur-[80px] -mr-32 -mt-32 rounded-full group-hover:bg-white/10 transition-all duration-700" />
                 <div className={`w-24 h-24 ${feature.bg} ${feature.color} rounded-3xl flex items-center justify-center mb-10 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>

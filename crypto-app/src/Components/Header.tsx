@@ -39,9 +39,9 @@ export function Header() {
         ? 'backdrop-blur-xl bg-[--bg-primary]/80 border-b border-[--border] py-2' 
         : 'backdrop-blur-sm bg-transparent py-4'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 group">
-          <svg width="28" height="28" viewBox="0 0 256 417" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" className="group-hover:scale-110 transition-transform text-[--brand]">
+      <div className="max-w-7xl mx-auto px-3 md:px-4 h-16 flex items-center justify-between">
+        <Link to="/" className="flex items-center gap-2 group shrink-0">
+          <svg width="24" height="24" viewBox="0 0 256 417" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" className="group-hover:scale-110 transition-transform text-[--brand] md:w-7 md:h-7">
             <path fill="currentColor" d="M127.961 0l-2.795 9.5v275.668l2.795 2.79 127.962-75.638z"/>
             <path fill="currentColor" d="M127.962 0L0 212.32l127.962 75.639V154.158z" opacity=".8"/>
             <path fill="currentColor" d="M127.961 312.187l-1.575 1.92v98.199l1.575 4.59 128.038-180.32z"/>
@@ -49,7 +49,7 @@ export function Header() {
             <path fill="currentColor" d="M127.961 287.958l127.96-75.637-127.96-58.162z" opacity=".6"/>
             <path fill="currentColor" d="M0 212.32l127.962 75.638V154.158z" opacity=".2"/>
           </svg>
-          <span className="text-2xl font-black text-[--text-primary] tracking-tighter">VAULTA</span>
+          <span className="text-xl md:text-2xl font-black text-[--text-primary] tracking-tighter">VAULTA</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
@@ -83,14 +83,14 @@ export function Header() {
           </div>
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 md:gap-4">
           {/* Theme Toggle */}
           <button 
             onClick={toggleTheme}
-            className="p-2.5 bg-[--surface] hover:bg-[--surface-hover] border border-[--border] rounded-xl text-[--text-muted] hover:text-[--text-primary] transition-all"
+            className="p-2 md:p-2.5 bg-[--surface] hover:bg-[--surface-hover] border border-[--border] rounded-xl text-[--text-muted] hover:text-[--text-primary] transition-all"
             aria-label="Toggle Theme"
           >
-            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+            {theme === 'dark' ? <Sun size={16} className="md:w-[18px]" /> : <Moon size={16} className="md:w-[18px]" />}
           </button>
 
           {currentAccount ? (
@@ -118,13 +118,15 @@ export function Header() {
           ) : (
             <button
               onClick={connectWallet}
-              className="flex items-center gap-2 border border-[--brand] text-[--brand] hover:bg-[--brand] hover:text-white rounded-full px-6 py-2 text-sm font-bold transition-all duration-300"
+              className="flex items-center gap-2 border border-[--brand] text-[--brand] hover:bg-[--brand] hover:text-white rounded-full px-3 md:px-6 py-2 text-xs md:text-sm font-bold transition-all duration-300"
             >
-              <Wallet size={14} /> Connect Wallet
+              <Wallet size={14} />
+              <span className="hidden sm:inline">Connect Wallet</span>
+              <span className="sm:hidden">Connect</span>
             </button>
           )}
 
-          <button className="md:hidden text-white/70 hover:text-[--text-primary] p-1" onClick={() => setMenuOpen(o => !o)}>
+          <button className="md:hidden text-[--text-muted] hover:text-[--text-primary] p-1 ml-1" onClick={() => setMenuOpen(o => !o)}>
             {menuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>

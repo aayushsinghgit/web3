@@ -47,7 +47,7 @@ export function TokenSale() {
         </svg>
       </motion.div>
 
-      <div className="flex-1 max-w-7xl mx-auto px-4 w-full flex flex-col justify-center pt-48 pb-20 z-10">
+      <div className="flex-1 max-w-7xl mx-auto px-4 md:px-6 w-full flex flex-col justify-center pt-32 md:pt-48 pb-20 z-10">
         <motion.div 
           variants={containerVariants}
           initial="hidden"
@@ -56,14 +56,14 @@ export function TokenSale() {
         >
           {/* Left Side */}
           <div>
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-500 text-[10px] font-black uppercase tracking-[0.3em] mb-10">
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-500 text-[8px] md:text-[10px] font-black uppercase tracking-[0.3em] mb-6 md:mb-10">
+              <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-green-500 animate-pulse" />
               Phase 01 Live
             </motion.div>
-            <motion.h1 variants={itemVariants} className="text-3xl md:text-6xl md:text-8xl font-black text-[--text-primary] mb-10 tracking-tighter leading-[0.85]">
+            <motion.h1 variants={itemVariants} className="text-3xl sm:text-5xl md:text-8xl font-black text-[--text-primary] mb-6 md:mb-10 tracking-tighter leading-[0.85]">
               VLT Token <br /> <span className="text-[--brand]">For Land Sale.</span>
             </motion.h1>
-            <motion.p variants={itemVariants} className="text-[--text-muted] text-xl md:text-2xl max-w-lg mb-16 leading-relaxed font-medium">
+            <motion.p variants={itemVariants} className="text-lg md:text-2xl max-w-lg mb-10 md:mb-16 leading-relaxed font-medium text-[--text-muted]">
               Join the future of decentralized real estate. Secure your stake in the global ecosystem with VLT tokens. <span className="text-[--text-primary]">Limited supply available.</span>
             </motion.p>
             
@@ -94,18 +94,18 @@ export function TokenSale() {
         </motion.div>
 
         {/* Purchase Section */}
-        <motion.div 
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="mt-40 max-w-5xl mx-auto w-full bg-[--surface] border border-[--border] rounded-[4rem] p-10 md:p-20 backdrop-blur-2xl relative group overflow-hidden"
-        >
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.6 }}
+            className="mt-20 md:mt-40 max-w-5xl mx-auto w-full bg-[--surface] border border-[--border] rounded-[2rem] md:rounded-[4rem] p-8 md:p-20 backdrop-blur-2xl relative group overflow-hidden"
+          >
            <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-[--brand]/5 to-transparent pointer-events-none" />
-           <div className="grid md:grid-cols-2 gap-20 items-center relative z-10">
+           <div className="grid md:grid-cols-2 gap-10 md:gap-20 items-center relative z-10">
               <div>
-                <h2 className="text-[--text-primary] text-2xl md:text-5xl font-black mb-6 tracking-tighter">Secure your VLT</h2>
-                <p className="text-[--text-muted] text-lg mb-12 leading-relaxed font-medium">Exchange your assets for VLT instantly at a guaranteed fixed rate.</p>
+                <h2 className="text-[--text-primary] text-2xl md:text-5xl font-black mb-4 md:mb-6 tracking-tighter">Secure your VLT</h2>
+                <p className="text-[--text-muted] text-base md:text-lg mb-8 md:mb-12 leading-relaxed font-medium">Exchange your assets for VLT instantly at a guaranteed fixed rate.</p>
                 <div className="space-y-6">
                    <div className="flex items-center gap-4 text-green-500 font-black text-base">
                       <div className="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center">
@@ -129,7 +129,7 @@ export function TokenSale() {
                     value={payAmount}
                     onChange={(e) => setPayAmount(e.target.value)}
                     placeholder="Enter amount (USD)"
-                    className="w-full bg-[--bg-primary] border border-[--border] rounded-3xl px-8 py-7 text-[--text-primary] text-3xl font-black outline-none focus:border-[--brand] transition-all placeholder:text-[--text-muted]/20 tabular-nums"
+                    className="w-full bg-[--bg-primary] border border-[--border] rounded-2xl md:rounded-3xl px-6 md:px-8 py-5 md:py-7 text-[--text-primary] text-xl md:text-3xl font-black outline-none focus:border-[--brand] transition-all placeholder:text-[--text-muted]/20 tabular-nums"
                   />
                   <div className="absolute right-8 top-1/2 -translate-y-1/2 text-[--text-muted]/40 font-black tracking-widest text-xs uppercase">USD</div>
                 </div>
@@ -139,10 +139,10 @@ export function TokenSale() {
                   className="bg-[--brand] rounded-3xl p-8 flex justify-between items-center border border-[--border] overflow-hidden relative"
                 >
                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 blur-3xl rounded-full" />
-                   <div className="relative z-10">
-                      <p className="text-white/60 text-[10px] font-black uppercase tracking-widest mb-2">You Receive</p>
-                      <p className="text-white text-4xl font-black tabular-nums">{receiveAmount} VLT</p>
-                   </div>
+                    <div className="relative z-10">
+                      <p className="text-white/60 text-[8px] md:text-[10px] font-black uppercase tracking-widest mb-1 md:mb-2">You Receive</p>
+                      <p className="text-white text-2xl md:text-4xl font-black tabular-nums">{receiveAmount} VLT</p>
+                    </div>
                    <button 
                     onClick={currentAccount ? () => {} : connectWallet}
                     className="p-5 bg-white/10 hover:bg-white/20 rounded-2xl transition-all text-white border border-white/10 relative z-10"

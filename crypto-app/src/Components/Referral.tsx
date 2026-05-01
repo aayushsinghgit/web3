@@ -48,7 +48,7 @@ export function Referral() {
   };
 
   return (
-    <section id="referral" ref={containerRef} className="py-20 px-4 bg-[--bg-primary] overflow-hidden">
+    <section id="referral" ref={containerRef} className="py-12 md:py-20 px-4 md:px-6 bg-[--bg-primary] overflow-hidden">
       <div className="max-w-6xl mx-auto">
         
         {/* Referral Hero */}
@@ -59,13 +59,13 @@ export function Referral() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
           >
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[--brand]/30 bg-[--brand]/10 text-[--brand] text-[10px] font-black uppercase tracking-[0.3em] mb-10">
+            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[--brand]/30 bg-[--brand]/10 text-[--brand] text-[8px] md:text-[10px] font-black uppercase tracking-[0.3em] mb-6 md:mb-10">
               <Users size={14} /> Referral Program
             </motion.div>
-            <motion.h2 variants={itemVariants} className="text-3xl md:text-6xl md:text-8xl font-black text-[--text-primary] mb-10 tracking-tighter leading-[0.85]">
+            <motion.h2 variants={itemVariants} className="text-4xl sm:text-6xl md:text-8xl font-black text-[--text-primary] mb-6 md:mb-10 tracking-tighter leading-[0.85]">
               Earn rewards <br /> <span className="text-[--brand]">by inviting friends.</span>
             </motion.h2>
-            <motion.p variants={itemVariants} className="text-[--text-muted] text-xl mb-12 max-w-md leading-relaxed font-medium">
+            <motion.p variants={itemVariants} className="text-[--text-muted] text-lg md:text-xl mb-10 md:mb-12 max-w-md leading-relaxed font-medium">
               Hey user, got a friend who could use a happier transaction experience? Refer them to Vaulta and we'll gift you and your friend our token.
             </motion.p>
             
@@ -99,7 +99,7 @@ export function Referral() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={imageVariants}
-            className="relative"
+            className="relative hidden lg:block"
           >
             <div className="absolute -inset-4 bg-gradient-to-tr from-[--brand]/10 to-blue-500/5 blur-[80px] rounded-full opacity-50" />
             <div className="relative aspect-square rounded-[4rem] overflow-hidden border border-[--border]">
@@ -110,17 +110,17 @@ export function Referral() {
               />
               <motion.div 
                 style={{ y: y2 }}
-                className="absolute top-6 right-6 sm:top-10 sm:right-10 w-36 h-36 sm:w-44 sm:h-44 flex flex-col items-center justify-center bg-[#2a2a2a]/90 backdrop-blur-xl border-t border-white/10 rounded-[2.5rem] shadow-[0_20px_40px_rgba(0,0,0,0.5)]"
+                className="absolute top-4 right-4 md:top-10 md:right-10 w-28 h-28 md:w-44 md:h-44 flex flex-col items-center justify-center bg-[#2a2a2a]/90 backdrop-blur-xl border-t border-white/10 rounded-3xl md:rounded-[2.5rem] shadow-[0_20px_40px_rgba(0,0,0,0.5)]"
               >
-                <p className="text-white text-4xl sm:text-5xl font-black tracking-tighter drop-shadow-md">250+</p>
-                <p className="text-white/60 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest mt-2">Team Members</p>
+                <p className="text-white text-3xl md:text-5xl font-black tracking-tighter drop-shadow-md">250+</p>
+                <p className="text-white/60 text-[8px] md:text-[10px] font-bold uppercase tracking-widest mt-1 md:mt-2">Team Members</p>
               </motion.div>
               <motion.div 
                 style={{ y: y1 }}
-                className="absolute bottom-6 left-6 sm:bottom-10 sm:left-10 w-36 h-36 sm:w-44 sm:h-44 flex flex-col items-center justify-center bg-[#2a2a2a]/90 backdrop-blur-xl border-t border-white/10 rounded-[2.5rem] shadow-[0_20px_40px_rgba(0,0,0,0.5)]"
+                className="absolute bottom-4 left-4 md:bottom-10 md:left-10 w-28 h-28 md:w-44 md:h-44 flex flex-col items-center justify-center bg-[#2a2a2a]/90 backdrop-blur-xl border-t border-white/10 rounded-3xl md:rounded-[2.5rem] shadow-[0_20px_40px_rgba(0,0,0,0.5)]"
               >
-                <p className="text-white text-4xl sm:text-5xl font-black tracking-tighter drop-shadow-md">50+</p>
-                <p className="text-white/60 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest mt-2">Countries</p>
+                <p className="text-white text-3xl md:text-5xl font-black tracking-tighter drop-shadow-md">50+</p>
+                <p className="text-white/60 text-[8px] md:text-[10px] font-bold uppercase tracking-widest mt-1 md:mt-2">Countries</p>
               </motion.div>
             </div>
           </motion.div>
@@ -132,13 +132,13 @@ export function Referral() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] as any }}
-          className="bg-[--surface] border border-[--border] rounded-[4.5rem] p-6 md:p-12 md:p-12 relative overflow-hidden"
+          className="bg-[--surface] border border-[--border] rounded-[2rem] md:rounded-[4.5rem] p-8 md:p-12 relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-[--brand]/5 to-transparent pointer-events-none" />
           <div className="relative z-10">
-            <div className="mb-20">
-              <h3 className="text-[--text-primary] text-2xl md:text-5xl md:text-6xl font-black mb-8 tracking-tighter">Why refer others to Vaulta?</h3>
-              <p className="text-[--text-muted] text-xl max-w-2xl leading-relaxed font-medium">
+            <div className="mb-12 md:mb-20">
+              <h3 className="text-[--text-primary] text-2xl md:text-6xl font-black mb-6 md:mb-8 tracking-tighter">Why refer others to Vaulta?</h3>
+              <p className="text-[--text-muted] text-base md:text-xl max-w-2xl leading-relaxed font-medium">
                 We believe the best way to grow is together. Our program is designed to reward both the referrer and the referred, making every transaction more beneficial.
               </p>
             </div>

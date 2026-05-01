@@ -119,23 +119,23 @@ export function Blog() {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className="bg-[--bg-primary] min-h-screen pt-24 pb-20 px-4 overflow-hidden relative">
+    <div className="bg-[--bg-primary] min-h-screen pt-20 md:pt-24 pb-20 px-4 md:px-6 overflow-hidden relative">
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[--brand]/5 blur-[150px] rounded-full -mr-40 -mt-40" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-24 gap-8">
            <div className="animate-in fade-in slide-in-from-left duration-1000">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[--brand]/10 border border-[--brand]/20 text-[--brand] text-[10px] font-black uppercase tracking-[0.2em] mb-8">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[--brand]/10 border border-[--brand]/20 text-[--brand] text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] mb-6 md:mb-8">
                 <Newspaper size={14} /> The Vaulta Journal
               </div>
-              <h1 className="text-4xl md:text-7xl md:text-9xl font-black text-[--text-primary] mb-4 tracking-tighter leading-[0.85]">
+              <h1 className="text-4xl sm:text-6xl md:text-9xl font-black text-[--text-primary] mb-4 tracking-tighter leading-[0.85]">
                  Frontier <br /> <span className="text-[--text-muted]/40">Updates.</span>
               </h1>
            </div>
            
-           <div className="flex flex-col items-end gap-4 animate-in fade-in slide-in-from-right duration-1000">
+           <div className="flex flex-col items-start md:items-end gap-4 animate-in fade-in slide-in-from-right duration-1000">
               {loading ? (
                 <div className="flex items-center gap-3 text-[--text-muted]/40 font-black text-[10px] uppercase tracking-widest">
                    <RefreshCw size={14} className="animate-spin text-[--brand]" /> Syncing with Chain...
@@ -149,17 +149,17 @@ export function Blog() {
                    <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" /> Live Feed Optimized
                 </div>
               )}
-              <p className="text-[--text-muted] font-medium text-right max-w-xs">Insights, news, and deep dives into the future of decentralization.</p>
+              <p className="text-[--text-muted] font-medium text-left md:text-right max-w-xs text-sm md:text-base">Insights, news, and deep dives into the future of decentralization.</p>
            </div>
         </div>
 
         {/* Featured Post */}
         {!loading && news.length > 0 && (
            <div className="group cursor-pointer mb-16 animate-in fade-in zoom-in duration-1000">
-              <a href={news[0].url} target="_blank" rel="noopener noreferrer" className="relative block bg-[--surface] border border-[--border] rounded-[4rem] p-8 md:p-12 overflow-hidden transition-all hover:border-[--brand]/50">
+              <a href={news[0].url} target="_blank" rel="noopener noreferrer" className="relative block bg-[--surface] border border-[--border] rounded-[2rem] md:rounded-[4rem] p-8 md:p-12 overflow-hidden transition-all hover:border-[--brand]/50">
                  <div className="absolute top-0 right-0 w-full h-full opacity-20 pointer-events-none group-hover:opacity-30 transition-opacity">
                     <SafeImage src={news[0].image} alt="" className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-[--bg-primary] via-[--bg-primary]/80 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-[--bg-primary] via-[--bg-primary]/80 md:to-transparent" />
                  </div>
                  
                  <div className="max-w-2xl relative z-10">
@@ -170,10 +170,10 @@ export function Blog() {
                     <p className="text-[--text-muted] text-xl mb-12 leading-relaxed font-medium line-clamp-3">
                        {news[0].excerpt}
                     </p>
-                    <div className="flex items-center gap-8 mb-12 text-[--text-muted]/40 font-black text-[10px] uppercase tracking-widest">
-                       <span className="flex items-center gap-2"><User size={14} /> {news[0].author}</span>
-                       <span className="flex items-center gap-2"><Calendar size={14} /> {news[0].date}</span>
-                    </div>
+                     <div className="flex flex-wrap items-center gap-4 md:gap-8 mb-8 md:mb-12 text-[--text-muted]/40 font-black text-[8px] md:text-[10px] uppercase tracking-widest">
+                        <span className="flex items-center gap-2"><User size={14} /> {news[0].author}</span>
+                        <span className="flex items-center gap-2"><Calendar size={14} /> {news[0].date}</span>
+                     </div>
                     <div className="flex items-center gap-3 text-[--text-primary] font-black text-xs uppercase tracking-widest group-hover:gap-6 transition-all">
                        Read full article <ArrowRight size={18} className="text-[--brand]" />
                     </div>
@@ -219,18 +219,18 @@ export function Blog() {
         </div>
 
         {/* Newsletter CTA */}
-        <div className="bg-[--surface] border border-[--border] rounded-[4rem] p-20 flex flex-col items-center text-center">
-           <h2 className="text-[--text-primary] text-2xl md:text-5xl font-black mb-8 tracking-tighter">Stay ahead of the curve.</h2>
-           <p className="text-[--text-muted] text-lg mb-12 max-w-xl font-medium">
+        <div className="bg-[--surface] border border-[--border] rounded-[2rem] md:rounded-[4rem] p-10 md:p-20 flex flex-col items-center text-center">
+           <h2 className="text-[--text-primary] text-2xl md:text-5xl font-black mb-6 md:mb-8 tracking-tighter">Stay ahead of the curve.</h2>
+           <p className="text-[--text-muted] text-base md:text-lg mb-8 md:mb-12 max-w-xl font-medium">
              Subscribe to our monthly newsletter for the latest insights, protocol updates, and ecosystem news.
            </p>
-           <div className="flex w-full max-w-md gap-3">
+           <div className="flex flex-col sm:flex-row w-full max-w-md gap-3">
               <input 
                 type="email" 
                 placeholder="Enter your email" 
-                className="flex-1 bg-[--surface] border border-[--border] rounded-2xl px-6 py-4 text-[--text-primary] text-xs outline-none focus:border-[--brand] transition-all"
+                className="flex-1 bg-[--surface] border border-[--border] rounded-2xl px-6 py-4 text-[--text-primary] text-xs outline-none focus:border-[--brand] transition-all h-14"
               />
-              <button className="px-8 py-4 bg-[--brand] text-white font-black rounded-2xl hover:scale-105 transition-all">
+              <button className="w-full sm:w-auto px-8 py-4 bg-[--brand] text-white font-black rounded-2xl hover:scale-105 transition-all h-14">
                  Subscribe
               </button>
            </div>

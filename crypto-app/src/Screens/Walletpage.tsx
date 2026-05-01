@@ -31,11 +31,11 @@ export function Walletpage() {
   }
 
   return (
-    <div className="bg-[--bg-primary] min-h-screen pt-24 pb-20 px-4">
+    <div className="bg-[--bg-primary] min-h-screen pt-20 md:pt-24 pb-20 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
         
         {/* Navigation Tabs */}
-        <div className="flex items-center gap-8 border-b border-[--border] mb-12 px-2">
+        <div className="flex items-center gap-4 md:gap-8 border-b border-[--border] mb-8 md:mb-12 px-2 overflow-x-auto no-scrollbar">
           {[
             { id: 'send', label: 'Send', icon: <Send size={16} /> },
             { id: 'portfolio', label: 'Portfolio', icon: <PieChart size={16} /> },
@@ -44,7 +44,7 @@ export function Walletpage() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`flex items-center gap-2 py-4 text-sm font-black uppercase tracking-widest transition-all relative ${activeTab === tab.id ? 'text-[--brand]' : 'text-[--text-muted] hover:text-[--text-primary]'}`}
+              className={`flex items-center gap-2 py-4 text-[10px] md:text-sm font-black uppercase tracking-widest transition-all relative whitespace-nowrap ${activeTab === tab.id ? 'text-[--brand]' : 'text-[--text-muted] hover:text-[--text-primary]'}`}
             >
               {tab.icon}
               {tab.label}
@@ -53,29 +53,29 @@ export function Walletpage() {
           ))}
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-6 md:gap-12">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12">
           
           {/* Main Content Area */}
-          <div className="lg:col-span-7 space-y-12">
+          <div className="lg:col-span-7 space-y-10 md:space-y-12">
             {activeTab === 'send' && (
               <div className="animate-in fade-in slide-in-from-left duration-700">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[--brand]/10 text-[--brand] text-[10px] font-black uppercase tracking-widest mb-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[--brand]/10 text-[--brand] text-[8px] md:text-[10px] font-black uppercase tracking-widest mb-4 md:mb-6">
                   Vaulta
                 </div>
-                <h1 className="text-3xl md:text-6xl md:text-7xl font-black text-[--text-primary] mb-6 tracking-tighter leading-[0.9]">
+                <h1 className="text-3xl sm:text-5xl md:text-7xl font-black text-[--text-primary] mb-4 md:mb-6 tracking-tighter leading-[0.9]">
                   Send crypto <br /> <span className="text-[--text-muted]/40">across the world.</span>
                 </h1>
-                <p className="text-[--text-muted] text-lg max-w-md leading-relaxed">
+                <p className="text-[--text-muted] text-base md:text-lg max-w-md leading-relaxed">
                   Send, receive, and grow crypto directly from your wallet — no middlemen, no permissions, no waiting.
                 </p>
-                <div className="mt-12 pt-12 border-t border-[--border] grid grid-cols-2 gap-8">
+                <div className="mt-8 md:mt-12 pt-8 md:pt-12 border-t border-[--border] grid grid-cols-2 gap-4 md:gap-8">
                   <div>
-                    <p className="text-[--brand] text-4xl font-black tracking-tighter">0.0s</p>
-                    <p className="text-[--text-muted]/40 text-[10px] font-black uppercase tracking-widest mt-1">Transaction Speed</p>
+                    <p className="text-[--brand] text-3xl md:text-4xl font-black tracking-tighter">0.0s</p>
+                    <p className="text-[--text-muted]/40 text-[8px] md:text-[10px] font-black uppercase tracking-widest mt-1">Transaction Speed</p>
                   </div>
                   <div>
-                    <p className="text-[--text-primary] text-4xl font-black tracking-tighter">100%</p>
-                    <p className="text-[--text-muted]/40 text-[10px] font-black uppercase tracking-widest mt-1">Guaranteed Secure</p>
+                    <p className="text-[--text-primary] text-3xl md:text-4xl font-black tracking-tighter">100%</p>
+                    <p className="text-[--text-muted]/40 text-[8px] md:text-[10px] font-black uppercase tracking-widest mt-1">Guaranteed Secure</p>
                   </div>
                 </div>
               </div>
@@ -83,22 +83,22 @@ export function Walletpage() {
             
             {activeTab === 'portfolio' && (
               <div className="animate-in fade-in duration-500">
-                <h2 className="text-[--text-primary] font-black text-3xl mb-8 tracking-tighter">Your Assets</h2>
+                <h2 className="text-[--text-primary] font-black text-2xl md:text-3xl mb-6 md:mb-8 tracking-tighter">Your Assets</h2>
                 <Portfolio />
               </div>
             )}
 
             {activeTab === 'activity' && (
               <div className="animate-in fade-in duration-500">
-                <h2 className="text-[--text-primary] font-black text-3xl mb-8 tracking-tighter">Recent Transactions</h2>
+                <h2 className="text-[--text-primary] font-black text-2xl md:text-3xl mb-6 md:mb-8 tracking-tighter">Recent Transactions</h2>
                 <TransactionList />
               </div>
             )}
           </div>
 
           {/* Right Sidebar */}
-          <div className="lg:col-span-5 space-y-8">
-            <div className="sticky top-28 space-y-8">
+          <div className="lg:col-span-5 space-y-6 md:space-y-8">
+            <div className="lg:sticky lg:top-28 space-y-6 md:space-y-8">
               <VirtualCard />
               <PaymentCard />
             </div>

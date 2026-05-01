@@ -31,10 +31,10 @@ export function Exchanges() {
   };
 
   return (
-    <div className="bg-[--bg-primary] min-h-screen pt-24 pb-20 px-4">
+    <div className="bg-[--bg-primary] min-h-screen pt-20 md:pt-24 pb-20 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
         
-        <div className="grid lg:grid-cols-2 gap-20 items-start mb-20">
+        <div className="grid lg:grid-cols-2 gap-10 md:gap-20 items-start mb-12 md:mb-20">
           
           {/* Left: Market Insights */}
           <motion.div 
@@ -42,19 +42,19 @@ export function Exchanges() {
             animate="visible"
             variants={containerVariants}
           >
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-[10px] font-black uppercase tracking-widest mb-8">
+            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-[8px] md:text-[10px] font-black uppercase tracking-widest mb-6 md:mb-8">
               <BarChart3 size={14} /> Market Hub
             </motion.div>
-            <motion.h1 variants={itemVariants} className="text-4xl md:text-7xl md:text-8xl font-black text-[--text-primary] mb-10 tracking-tighter leading-[0.85]">
+            <motion.h1 variants={itemVariants} className="text-4xl sm:text-6xl md:text-8xl font-black text-[--text-primary] mb-6 md:mb-10 tracking-tighter leading-[0.85]">
               Swap assets <br /> <span className="text-[--text-muted]/40">without limits.</span>
             </motion.h1>
-            <motion.p variants={itemVariants} className="text-[--text-muted] text-xl max-w-lg mb-16 leading-relaxed font-medium">
+            <motion.p variants={itemVariants} className="text-[--text-muted] text-lg md:text-xl max-w-lg mb-10 md:mb-16 leading-relaxed font-medium">
               Experience the power of universal liquidity. Swap any token on any chain with optimized gas and zero slippage protection.
             </motion.p>
 
-            <motion.div variants={itemVariants} className="bg-[--surface] border border-[--border] rounded-[3rem] p-10 overflow-hidden relative">
+            <motion.div variants={itemVariants} className="bg-[--surface] border border-[--border] rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 overflow-hidden relative">
               <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/5 blur-3xl rounded-full" />
-              <h3 className="text-[--text-primary] font-black text-sm uppercase tracking-widest mb-8 flex items-center gap-2">
+              <h3 className="text-[--text-primary] font-black text-[10px] md:text-sm uppercase tracking-widest mb-6 md:mb-8 flex items-center gap-2">
                 <TrendingUp size={16} className="text-green-400" /> Hot Tokens
               </h3>
               <div className="space-y-4">
@@ -68,11 +68,11 @@ export function Exchanges() {
                     whileHover={{ x: 5 }}
                     className="flex justify-between items-center p-5 bg-[--bg-primary]/30 border border-transparent hover:border-[--border] rounded-2xl transition-all"
                   >
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-[--surface] border border-[--border] rounded-xl flex items-center justify-center font-black text-sm text-[--text-primary]">{t.symbol[0]}</div>
+                    <div className="flex items-center gap-3 md:gap-4">
+                      <div className="w-10 h-10 md:w-12 md:h-12 bg-[--surface] border border-[--border] rounded-xl flex items-center justify-center font-black text-xs md:text-sm text-[--text-primary]">{t.symbol[0]}</div>
                       <div>
-                        <p className="text-[--text-primary] font-bold text-base">{t.name}</p>
-                        <p className="text-[--text-muted]/40 text-[10px] font-black uppercase tracking-widest mt-1">{t.symbol}</p>
+                        <p className="text-[--text-primary] font-bold text-sm md:text-base">{t.name}</p>
+                        <p className="text-[--text-muted]/40 text-[8px] md:text-[10px] font-black uppercase tracking-widest mt-0.5 md:mt-1">{t.symbol}</p>
                       </div>
                     </div>
                     <div className="text-right">
@@ -90,17 +90,17 @@ export function Exchanges() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] as any }}
-            className="sticky top-40"
+            className="lg:sticky lg:top-40"
           >
             <div className="bg-[--surface] border border-[--border] rounded-[4rem] p-8 md:p-14 backdrop-blur-2xl relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-80 h-80 bg-[--brand]/10 blur-[100px] -mr-40 -mt-40 rounded-full group-hover:bg-[--brand]/20 transition-all duration-1000" />
               
-              <div className="flex justify-between items-center mb-12 relative z-10">
+              <div className="flex justify-between items-center mb-8 md:mb-12 relative z-10">
                 <div className="flex flex-col">
-                  <h2 className="text-[--text-primary] text-4xl font-black tracking-tight">Swap</h2>
-                  <div className="flex items-center gap-2 mt-2">
-                    <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                    <span className="text-[10px] font-black uppercase tracking-widest text-[--text-muted]/40">Live Market Access</span>
+                  <h2 className="text-[--text-primary] text-2xl md:text-4xl font-black tracking-tight">Swap</h2>
+                  <div className="flex items-center gap-2 mt-1 md:mt-2">
+                    <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-green-500 rounded-full animate-pulse" />
+                    <span className="text-[8px] md:text-[10px] font-black uppercase tracking-widest text-[--text-muted]/40">Live Market Access</span>
                   </div>
                 </div>
                 <div className="flex gap-3">
@@ -116,32 +116,32 @@ export function Exchanges() {
                     <span className="text-[--text-muted] text-[10px] font-black uppercase tracking-widest">You Pay</span>
                     <span className="text-[--text-muted]/40 text-[10px] font-black">Balance: 1.45 ETH</span>
                   </div>
-                  <div className="flex justify-between items-center gap-6">
+                  <div className="flex justify-between items-center gap-4 md:gap-6">
                     <input 
                       type="number" 
                       value={fromAmount}
                       onChange={(e) => setFromAmount(e.target.value)}
-                      className="bg-transparent text-[--text-primary] text-3xl md:text-6xl font-black outline-none w-1/2 placeholder:text-[--text-muted]/10 tabular-nums"
+                      className="bg-transparent text-[--text-primary] text-3xl sm:text-4xl md:text-6xl font-black outline-none w-1/2 placeholder:text-[--text-muted]/10 tabular-nums"
                       placeholder="0.0"
                     />
-                    <button className="flex items-center gap-4 bg-[--surface] hover:bg-[--surface-hover] px-6 py-4 rounded-2xl transition-all border border-[--border]">
-                      <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-sm">Ξ</div>
-                      <span className="text-[--text-primary] font-black text-xl">{fromToken}</span>
-                      <ChevronDown size={20} className="text-[--text-muted]/40" />
+                    <button className="flex items-center gap-3 md:gap-4 bg-[--surface] hover:bg-[--surface-hover] px-4 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl transition-all border border-[--border]">
+                      <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-xs md:text-sm">Ξ</div>
+                      <span className="text-[--text-primary] font-black text-base md:text-xl">{fromToken}</span>
+                      <ChevronDown size={16} className="text-[--text-muted]/40 md:w-5" />
                     </button>
                   </div>
                 </motion.div>
 
-                <motion.div whileHover={{ scale: 1.01 }} className="bg-[--bg-primary] border border-[--border] rounded-[2.5rem] p-8 hover:border-[--brand]/30 transition-all">
-                  <div className="flex justify-between mb-6">
-                    <span className="text-[--text-muted] text-[10px] font-black uppercase tracking-widest">You Receive</span>
+                <motion.div whileHover={{ scale: 1.01 }} className="bg-[--bg-primary] border border-[--border] rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-8 hover:border-[--brand]/30 transition-all">
+                  <div className="flex justify-between mb-4 md:mb-6">
+                    <span className="text-[--text-muted] text-[8px] md:text-[10px] font-black uppercase tracking-widest">You Receive</span>
                   </div>
-                  <div className="flex justify-between items-center gap-6">
-                    <div className="text-[--text-primary] text-3xl md:text-6xl font-black tabular-nums">{(parseFloat(fromAmount) * 3420).toLocaleString()}</div>
-                    <button className="flex items-center gap-4 bg-[--surface] hover:bg-[--surface-hover] px-6 py-4 rounded-2xl transition-all border border-[--border]">
-                      <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-sm">$</div>
-                      <span className="text-[--text-primary] font-black text-xl">{toToken}</span>
-                      <ChevronDown size={20} className="text-[--text-muted]/40" />
+                  <div className="flex justify-between items-center gap-4 md:gap-6">
+                    <div className="text-[--text-primary] text-3xl sm:text-4xl md:text-6xl font-black tabular-nums">{(parseFloat(fromAmount) * 3420).toLocaleString()}</div>
+                    <button className="flex items-center gap-3 md:gap-4 bg-[--surface] hover:bg-[--surface-hover] px-4 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl transition-all border border-[--border]">
+                      <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-green-400 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-xs md:text-sm">$</div>
+                      <span className="text-[--text-primary] font-black text-base md:text-xl">{toToken}</span>
+                      <ChevronDown size={16} className="text-[--text-muted]/40 md:w-5" />
                     </button>
                   </div>
                 </motion.div>
@@ -198,8 +198,9 @@ export function Exchanges() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="bg-[--surface] border border-[--border] rounded-[4rem] overflow-hidden p-4"
+            className="bg-[--surface] border border-[--border] rounded-[2rem] md:rounded-[4rem] overflow-x-auto no-scrollbar"
           >
+            <div className="min-w-[800px] p-4">
             <div className="grid grid-cols-4 gap-4 p-10 border-b border-[--border] text-[10px] font-black uppercase tracking-[0.3em] text-[--text-muted]">
               <span>Token</span>
               <span>Price</span>
