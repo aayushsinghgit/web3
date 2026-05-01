@@ -19,7 +19,8 @@ export default defineConfig({
     }
   },
   define: {
-    'process.env': {}
+    'process.env': {},
+    'process.version': '"v16.0.0"'
   },
   optimizeDeps: {
     include: ['web3modal', '@walletconnect/web3-provider', 'ethers']
