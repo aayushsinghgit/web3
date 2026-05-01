@@ -79,13 +79,12 @@ function App() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ referrer: ref, referred: currentAccount })
-      }).catch(err => {
-        // Silently fail referral tracking to prevent UI disruption
       })
-      .then(res => {
+      .then((res) => {
         if (!res.ok) throw new Error(`Server responded with ${res.status}`);
+        return res.json();
       })
-      .catch(err => {
+      .catch((err) => {
         console.warn("Referral tracking skipped:", err.message);
       });
     }
