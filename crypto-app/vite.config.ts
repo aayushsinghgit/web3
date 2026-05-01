@@ -27,6 +27,9 @@ export default defineConfig({
   },
   build: {
     chunkSizeWarningLimit: 1100,
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
     rollupOptions: {
       output: {
         manualChunks(id) {
