@@ -7,7 +7,7 @@ import { Footer } from './Footer';
 
 export function Homepage() {
   return (
-    <div className="bg-[--bg-primary] pt-16">
+    <div className="bg-[--bg-primary] pt-16 relative">
       <Home />
       <Blockchain />
       <Referral />

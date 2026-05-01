@@ -7,6 +7,8 @@ import { TransactionProvider } from './Wallet/context/TransactionContext';
 import { ThemeProvider } from './context/ThemeContext';
 import './index.css';
 
+console.log("🚀 Vaulta Initializing...");
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>

@@ -73,16 +73,26 @@ function App() {
     const params = new URLSearchParams(search);
     const ref = params.get('ref');
     if (ref && currentAccount && ref.toLowerCase() !== currentAccount.toLowerCase()) {
-      fetch('http://localhost:5000/api/referrals', {
+      // Use the environment variable for API URL with a fallback
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+      fetch(`${apiUrl}/referrals`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ referrer: ref, referred: currentAccount })
-      }).catch(err => console.error("Referral tracking failed:", err));
+      }).catch(err => {
+        // Silently fail referral tracking to prevent UI disruption
+      })
+      .then(res => {
+        if (!res.ok) throw new Error(`Server responded with ${res.status}`);
+      })
+      .catch(err => {
+        console.warn("Referral tracking skipped:", err.message);
+      });
     }
   }, [currentAccount, search]);
 
   return (
-    <div className="min-h-screen bg-[--bg-primary] text-[--text-primary] font-sans flex flex-col">
+    <div className="bg-[--bg-primary] pt-16 relative text-[--text-primary] font-sans flex flex-col">
       <Header />
       <NetworkBanner />
       <Chatbot />
