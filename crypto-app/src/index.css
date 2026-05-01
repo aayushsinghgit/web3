@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  :root {
+    --brand: #6C63FF;
+    --brand-dim: #4F49C4;
+    --bg-primary: #F8FAFC;
+    --text-primary: #0f172a;
+    --surface: #ffffff;
+    --surface-hover: #F1F5F9;
+    --border: rgba(15, 23, 42, 0.08);
+    --text-muted: #64748b;
+    --success: #10B981;
+    --danger: #EF4444;
+  }
+
+  .dark {
+    --bg-primary: #050508;
+    --text-primary: #F0EFFF;
+    --surface: rgba(255, 255, 255, 0.05);
+    --surface-hover: rgba(255, 255, 255, 0.09);
+    --border: rgba(255, 255, 255, 0.1);
+    --text-muted: #8B8AA3;
+  }
+
+  body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+
+  /* Remove number input spinners */
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+}
+
+.glass-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  border-radius: 1.5rem;
+  transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+.glass-input {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  color: var(--text-primary);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.glass-input:focus {
+  border-color: var(--brand);
+  background: var(--surface-hover);
+}
+
+@keyframes scroll-pill {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(10px); opacity: 0; }
+}
+
+.animate-scroll-pill {
+  animation: scroll-pill 1.5s infinite;
+}

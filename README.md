@@ -1,114 +1,60 @@
-# KRYPT - Complete Cryptocurrency Platform
+# 🔐 Vaulta — Premium Web3 Wallet & DeFi Platform
 
-A full-stack cryptocurrency platform featuring a modern React web application and Ethereum smart contracts for secure blockchain transactions and DeFi functionality.
+Vaulta is a production-ready, dark glassmorphic Web3 platform built on Ethereum. It features a modern React application, a dedicated Express backend, and professional Solidity smart contracts.
 
 ## 📁 Project Structure
 
 ```
-Krypt/
-├── crypto-app/          # React.js frontend application
-├── smart-contracts/     # Ethereum smart contracts
-└── README.md           # This file
+Vaulta/
+├── crypto-app/          # React 19 + Vite frontend
+├── server/              # Express + SQLite backend for referrals
+├── smart-contracts/     # Hardhat + Solidity smart contracts
+├── start-dev.bat        # Launches frontend dev server
+└── start-backend.bat    # Launches referral backend
 ```
 
-## 🚀 Applications
+## 🚀 Key Features
 
-### crypto-app/
-Modern cryptocurrency wallet and trading platform built with React.js
+### 1. AI-Powered Fundraiser (Real On-Chain)
+- **Smart Contracts**: Uses a `FundraiserFactory` pattern to deploy unique contracts for every project.
+- **AI Integration**: Leverages Gemini 1.5 Flash to generate project descriptions from titles.
+- **Voice-to-Text**: Built-in speech recognition for accessibility and ease of use.
 
-**Features:**
-- Secure wallet integration with MetaMask
-- Token sales participation
-- Real-time cryptocurrency trading
-- DeFi protocols access
-- Mobile-responsive design with bottom navigation
-- Smooth GSAP animations
-- Firebase backend integration
+### 2. Universal Wallet Support
+- **Multi-Provider**: Integrated **Web3Modal** to support MetaMask, WalletConnect, and Coinbase Wallet.
+- **Real Transactions**: Fully integrated with `ethers.js` for on-chain transfers.
 
-**Tech Stack:**
-- React.js, Tailwind CSS
-- GSAP animations
-- Web3.js integration
-- Firebase Firestore
-- Responsive design
-
-### smart-contracts/
-Ethereum smart contracts for blockchain functionality
-
-**Features:**
-- ERC-20 token implementation (KRT)
-- Token sale contracts
-- Staking and rewards system
-- Governance mechanisms
-- Security-audited code
-
-**Tech Stack:**
-- Solidity
-- Hardhat development environment
-- OpenZeppelin standards
-- Ethers.js
+### 3. Server-Side Referrals
+- **Tracking**: Real-time referral recording using a dedicated Node.js/SQLite backend.
+- **Leaderboard**: Global rankings based on real conversion data, not just client-side simulation.
 
 ## 🛠️ Getting Started
 
-### Prerequisites
-- Node.js (v14+)
-- npm or yarn
-- MetaMask browser extension
-- Git
-
-### Frontend Setup
-```bash
-cd crypto-app
-npm install
-npm start
-```
-
-### Smart Contracts Setup
+### 1. Smart Contracts
 ```bash
 cd smart-contracts
 npm install
 npx hardhat compile
-npx hardhat test
+# Deploy to local node or testnet
+npx hardhat run scripts/deploy.js --network sepolia
+npx hardhat run scripts/deploy_fundraiser.js --network sepolia
 ```
 
-## 📱 Key Features
+### 2. Backend Server
+```bash
+cd server
+npm install
+npm start # Or run start-backend.bat from root
+```
 
-- **Modern UI/UX** - Clean, responsive design with mobile-first approach
-- **Blockchain Integration** - Secure wallet connections and transactions
-- **Token Economics** - Native KRT token with staking rewards
-- **DeFi Protocols** - Decentralized finance functionality
-- **Mobile Optimization** - Bottom navigation and touch-friendly interface
-- **Security First** - Multi-layer security protocols and 2FA
+### 3. Frontend App
+```bash
+cd crypto-app
+npm install
+npm run dev # Or run start-dev.bat from root
+```
 
-## 🔐 Security Features
+## 📜 License
+This project is licensed under the MIT License.
 
-- Two-factor authentication (2FA)
-- Encrypted transactions
-- Secure wallet connections
-- Smart contract audits
-- Multi-signature support
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📞 Contact
-
-- Website: kryptwallet.com
-- Email: support@kryptwallet.com
-- Twitter: @kryptwallet
-
-## 🙏 Acknowledgments
-
-- React.js and Web3.js communities
-- OpenZeppelin for smart contract standards
-- GSAP for smooth animations
-- Tailwind CSS for styling
+*Built for the future of decentralized finance.*

@@ -45,3 +45,11 @@ firebase-debug.log
 # Misc
 *.tgz
 *.tar.gz
+
+# Temporary build/refactor scripts (not part of source)
+crypto-app/compact-layout.cjs
+crypto-app/fix-ease.cjs
+crypto-app/fix-imports.cjs
+
+# Vite build output
+crypto-app/dist/

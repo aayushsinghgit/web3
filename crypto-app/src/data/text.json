@@ -1,0 +1,16 @@
+{
+  "coreValues": [
+    {
+      "title": "Decentralized Security",
+      "description": "We prioritize absolute cryptographic security and guarantee that you hold the keys to your assets at all times."
+    },
+    {
+      "title": "Seamless User Experience",
+      "description": "Our platform is designed to make complex Web3 interactions simple, intuitive, and accessible for everyone."
+    },
+    {
+      "title": "Transparent Architecture",
+      "description": "Built on open-source principles, we maintain full transparency in our smart contracts and transaction flows."
+    }
+  ]
+}

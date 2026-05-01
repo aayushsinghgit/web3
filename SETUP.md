@@ -1,6 +1,6 @@
-# Krypt Application Setup Guide
+# Vaulta Application Setup Guide
 
-This guide will help you set up and run the Krypt cryptocurrency application.
+This guide will help you set up and run the Vaulta cryptocurrency application.
 
 ## Prerequisites
 
@@ -12,7 +12,7 @@ This guide will help you set up and run the Krypt cryptocurrency application.
 ## Project Structure
 
 ```
-Krypt/
+Vaulta/
 ├── crypto-app/          # React frontend application
 ├── smart-contracts/     # Ethereum smart contracts
 └── SETUP.md            # This setup guide

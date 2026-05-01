@@ -1,0 +1,62 @@
+{
+  "common": {
+    "brandName": "VAULTA",
+    "connectWallet": "Connect Wallet",
+    "disconnect": "Disconnect"
+  },
+  "nav": {
+    "home": "Home",
+    "wallet": "Wallet",
+    "tokenSale": "Token Sale",
+    "swap": "Swap",
+    "fundraiser": "Fundraiser",
+    "calculator": "ROI Calculator",
+    "referral": "Referral",
+    "about": "About",
+    "vision": "Vision",
+    "careers": "Careers",
+    "blog": "Blog"
+  },
+  "home": {
+    "hero": {
+      "tagline": "Next-Gen Protocol",
+      "title": "Decentralized finance redefined.",
+      "subtitle": "Secure, beautiful, and borderless self-custody for the next billion users."
+    }
+  },
+  "vision": {
+    "tagline": "our mission",
+    "title": "Crypto that belongs to you.",
+    "subtitle": "We built Vaulta because the future of finance should be open, secure, and above all, owned by the people who use it.",
+    "pillars": [
+      { "title": "Universal Access", "desc": "No boundaries, no borders. Finance should be as simple as sending a text message." },
+      { "title": "True Sovereignty", "desc": "Your keys, your crypto. We believe in a world where users are their own banks." },
+      { "title": "Modular Future", "desc": "Built for evolution. Our protocol adapts to the next generation of Web3." }
+    ],
+    "manifestoTitle": "The Vaulta Manifesto",
+    "manifesto": [
+      "Centralized exchanges have failed the promise of blockchain. By holding assets on behalf of users, they replicate the very systems they were meant to replace.",
+      "Vaulta is our answer. A modular, high-performance gateway to the decentralized world where privacy is a right, security is a standard, and self-custody is the only path forward."
+    ],
+    "cta": "Meet the Architects"
+  },
+  "careers": {
+    "tagline": "Careers at Vaulta",
+    "title": "Build the Invisible.",
+    "subtitle": "We're looking for architects, dreamers, and skeptics to help us rebuild the financial infrastructure of the world.",
+    "culture": [
+      { "title": "Radical Transparency", "desc": "Open source is in our DNA. We build in public and trust by default." },
+      { "title": "Security First", "desc": "We don't ship until it's bulletproof. Excellence is our only baseline." },
+      { "title": "Infinite Growth", "desc": "We invest heavily in our team's evolution. Learn fast, build faster." }
+    ],
+    "ctaTitle": "Don't see a fit?",
+    "ctaText": "We are always looking for exceptional talent. If you have a vision for the future of finance, reach out to us at careers@vaulta.io"
+  },
+  "blog": {
+    "tagline": "The Vaulta Journal",
+    "title": "Frontier Updates.",
+    "subtitle": "Insights, news, and deep dives into the future of decentralization.",
+    "newsletterTitle": "Stay ahead of the curve.",
+    "newsletterText": "Subscribe to our monthly newsletter for the latest insights, protocol updates, and ecosystem news."
+  }
+}
