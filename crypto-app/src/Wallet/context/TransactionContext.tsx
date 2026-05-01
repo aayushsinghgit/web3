@@ -27,21 +27,23 @@ const TransactionContext = createContext<TransactionContextType>({} as Transacti
 
 export const useTransaction = () => useContext(TransactionContext);
 
-// Web3Modal configuration
 const providerOptions = {
   walletconnect: {
     package: WalletConnectProvider,
     options: {
-      infuraId: import.meta.env.VITE_INFURA_ID || "27e484dcd9e3efcfd25a83a78777cdf1", // Placeholder
+      infuraId: import.meta.env.VITE_INFURA_ID || "27e484dcd9e3efcfd25a83a78777cdf1",
     },
   },
 };
 
-const web3Modal = new Web3Modal({
-  cacheProvider: true,
-  providerOptions,
-  theme: "dark",
-});
+let web3Modal: any;
+if (typeof window !== "undefined") {
+  web3Modal = new Web3Modal({
+    cacheProvider: true,
+    providerOptions,
+    theme: "dark",
+  });
+}
 
 export const TransactionProvider = ({ children }: { children: ReactNode }) => {
   const [currentAccount, setCurrentAccount] = useState('');
