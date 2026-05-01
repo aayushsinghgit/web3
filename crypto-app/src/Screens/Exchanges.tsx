@@ -33,11 +33,11 @@ export function Exchanges() {
   return (
     <div className="bg-[--bg-primary] min-h-screen pt-20 md:pt-24 pb-20 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
-        
+
         <div className="grid lg:grid-cols-2 gap-10 md:gap-20 items-start mb-12 md:mb-20">
-          
+
           {/* Left: Market Insights */}
-          <motion.div 
+          <motion.div
             initial="hidden"
             animate="visible"
             variants={containerVariants}
@@ -63,8 +63,8 @@ export function Exchanges() {
                   { name: 'Vaulta', symbol: 'VLT', price: '$0.25', change: '+15.2%' },
                   { name: 'Solana', symbol: 'SOL', price: '$145.10', change: '-1.1%' },
                 ].map((t, i) => (
-                  <motion.div 
-                    key={i} 
+                  <motion.div
+                    key={i}
                     whileHover={{ x: 5 }}
                     className="flex justify-between items-center p-5 bg-[--bg-primary]/30 border border-transparent hover:border-[--border] rounded-2xl transition-all"
                   >
@@ -86,7 +86,7 @@ export function Exchanges() {
           </motion.div>
 
           {/* Right: Swap Interface */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] as any }}
@@ -94,7 +94,7 @@ export function Exchanges() {
           >
             <div className="bg-[--surface] border border-[--border] rounded-[4rem] p-8 md:p-14 backdrop-blur-2xl relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-80 h-80 bg-[--brand]/10 blur-[100px] -mr-40 -mt-40 rounded-full group-hover:bg-[--brand]/20 transition-all duration-1000" />
-              
+
               <div className="flex justify-between items-center mb-8 md:mb-12 relative z-10">
                 <div className="flex flex-col">
                   <h2 className="text-[--text-primary] text-2xl md:text-4xl font-black tracking-tight">Swap</h2>
@@ -117,8 +117,8 @@ export function Exchanges() {
                     <span className="text-[--text-muted]/40 text-[10px] font-black">Balance: 1.45 ETH</span>
                   </div>
                   <div className="flex justify-between items-center gap-4 md:gap-6">
-                    <input 
-                      type="number" 
+                    <input
+                      type="number"
                       value={fromAmount}
                       onChange={(e) => setFromAmount(e.target.value)}
                       className="bg-transparent text-[--text-primary] text-3xl sm:text-4xl md:text-6xl font-black outline-none w-1/2 placeholder:text-[--text-muted]/10 tabular-nums"
@@ -149,12 +149,12 @@ export function Exchanges() {
 
               <div className="mt-12 grid grid-cols-2 gap-4 relative z-10">
                 <div className="bg-[--surface] border border-[--border] rounded-3xl p-6">
-                   <span className="text-[--text-muted]/40 text-[9px] font-black uppercase tracking-[0.2em] mb-2 block">Price Impact</span>
-                   <span className="text-green-400 text-sm font-black">0.01%</span>
+                  <span className="text-[--text-muted]/40 text-[9px] font-black uppercase tracking-[0.2em] mb-2 block">Price Impact</span>
+                  <span className="text-green-400 text-sm font-black">0.01%</span>
                 </div>
                 <div className="bg-[--surface] border border-[--border] rounded-3xl p-6">
-                   <span className="text-[--text-muted]/40 text-[9px] font-black uppercase tracking-[0.2em] mb-2 block">Slippage</span>
-                   <span className="text-[--text-primary] text-sm font-black">0.5% Auto</span>
+                  <span className="text-[--text-muted]/40 text-[9px] font-black uppercase tracking-[0.2em] mb-2 block">Slippage</span>
+                  <span className="text-[--text-primary] text-sm font-black">0.5% Auto</span>
                 </div>
               </div>
 
@@ -163,15 +163,15 @@ export function Exchanges() {
               </button>
 
               <div className="mt-8 flex items-center justify-center gap-3 opacity-30 relative z-10">
-                 <Shield size={14} className="text-[--text-primary]" />
-                 <span className="text-[10px] font-black uppercase tracking-widest text-[--text-primary]">Secured by Vaulta Guardian</span>
+                <Shield size={14} className="text-[--text-primary]" />
+                <span className="text-[10px] font-black uppercase tracking-widest text-[--text-primary]">Secured by Vaulta Guardian</span>
               </div>
             </div>
           </motion.div>
         </div>
 
         {/* Market Overview */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -179,28 +179,28 @@ export function Exchanges() {
           className="mt-32"
         >
           <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
-             <div>
-                <h2 className="text-[--text-primary] text-3xl md:text-6xl font-black tracking-tighter mb-4">Market Overview</h2>
-                <p className="text-[--text-muted] font-medium">Live performance of the global asset landscape.</p>
-             </div>
-             <div className="relative group w-full md:w-96">
-                <input 
-                  type="text" 
-                  placeholder="Search market..." 
-                  className="w-full bg-[--surface] border border-[--border] rounded-[2rem] px-8 py-5 text-[--text-primary] outline-none focus:border-[--brand] transition-all pl-14"
-                />
-                <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-[--text-muted]/40" size={20} />
-             </div>
+            <div>
+              <h2 className="text-[--text-primary] text-3xl md:text-6xl font-black tracking-tighter mb-4">Market Overview</h2>
+              <p className="text-[--text-muted] font-medium">Live performance of the global asset landscape.</p>
+            </div>
+            <div className="relative group w-full md:w-96">
+              <input
+                type="text"
+                placeholder="Search market..."
+                className="w-full bg-[--surface] border border-[--border] rounded-[2rem] px-8 py-5 text-[--text-primary] outline-none focus:border-[--brand] transition-all pl-14"
+              />
+              <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-[--text-muted]/40" size={20} />
+            </div>
           </div>
-          
-          <motion.div 
+
+          <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             className="bg-[--surface] border border-[--border] rounded-[2rem] md:rounded-[4rem] overflow-x-auto no-scrollbar"
           >
-            <div className="min-w-[800px] p-4">
+            <div className="min-w-[800px]">
             <div className="grid grid-cols-4 gap-4 p-10 border-b border-[--border] text-[10px] font-black uppercase tracking-[0.3em] text-[--text-muted]">
               <span>Token</span>
               <span>Price</span>
@@ -214,8 +214,8 @@ export function Exchanges() {
                 { name: 'Solana', sym: 'SOL', price: '$145', change: '-1.1%', cap: '$64B' },
                 { name: 'Vaulta', sym: 'VLT', price: '$0.25', change: '+15.2%', cap: '$6.2M' },
               ].map((m, i) => (
-                <motion.div 
-                  key={i} 
+                <motion.div
+                  key={i}
                   variants={itemVariants}
                   whileHover={{ backgroundColor: 'var(--surface-hover)', scale: 1.005 }}
                   className="grid grid-cols-4 gap-4 p-8 rounded-[2.5rem] transition-all items-center cursor-pointer"
@@ -229,6 +229,7 @@ export function Exchanges() {
                   <span className="text-[--text-muted] font-bold">{m.cap}</span>
                 </motion.div>
               ))}
+            </div>
             </div>
           </motion.div>
         </motion.div>
