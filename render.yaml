@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: vaulta-backend
+    env: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: PORT
+        value: 5000
+    # Uncomment to enable persistent storage for SQLite
+    # disk:
+    #   name: vaulta-db
+    #   mountPath: /opt/render/project/src/server/data
+    #   sizeGB: 1
