@@ -83,7 +83,7 @@ export function Referral() {
   };
 
   return (
-    <div ref={containerRef} className="bg-[--bg-primary] min-h-screen pt-24 pb-20 px-4 overflow-hidden relative">
+    <div ref={containerRef} className="bg-[--bg-primary] min-h-screen pt-10 md:pt-12 pb-20 px-4 overflow-hidden relative">
       
       {/* Background Orbs with Parallax */}
       <motion.div style={{ y: y1 }} className="absolute top-0 right-0 w-[800px] h-[800px] bg-[--brand]/5 blur-[150px] rounded-full -mr-40 -mt-40 animate-pulse" />

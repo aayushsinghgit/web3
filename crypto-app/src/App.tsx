@@ -58,8 +58,9 @@ const LoadingScreen = () => {
 // Applies top padding to all routes EXCEPT the homepage which manages its own hero layout
 const RouteWrapper = ({ children }: { children: React.ReactNode }) => {
   const { pathname } = useLocation();
+  const noPaddingRoutes = ['/', '/token-sale'];
   return (
-    <div className={pathname === '/' ? '' : 'pt-16 md:pt-20'}>
+    <div className={noPaddingRoutes.includes(pathname) ? '' : 'pt-16 md:pt-20'}>
       {children}
     </div>
   );
@@ -91,7 +92,7 @@ function App() {
   }, [currentAccount, search]);
 
   return (
-    <div className="bg-[--bg-primary] pt-16 relative text-[--text-primary] font-sans flex flex-col">
+    <div className="bg-[--bg-primary] relative text-[--text-primary] font-sans flex flex-col min-h-screen">
       <Header />
       <NetworkBanner />
       <Chatbot />

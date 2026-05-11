@@ -119,7 +119,7 @@ export function Blog() {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className="bg-[--bg-primary] min-h-screen pt-20 md:pt-24 pb-20 px-4 md:px-6 overflow-hidden relative">
+    <div className="bg-[--bg-primary] min-h-screen pt-10 md:pt-12 pb-20 px-4 md:px-6 overflow-hidden relative">
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[--brand]/5 blur-[150px] rounded-full -mr-40 -mt-40" />
 
       <div className="max-w-7xl mx-auto relative z-10">

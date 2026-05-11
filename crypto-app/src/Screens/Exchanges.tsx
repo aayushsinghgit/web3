@@ -31,7 +31,7 @@ export function Exchanges() {
   };
 
   return (
-    <div className="bg-[--bg-primary] min-h-screen pt-20 md:pt-24 pb-20 px-4 md:px-6">
+    <div className="bg-[--bg-primary] min-h-screen pt-10 md:pt-12 pb-20 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
 
         <div className="grid lg:grid-cols-2 gap-10 md:gap-20 items-start mb-12 md:mb-20">

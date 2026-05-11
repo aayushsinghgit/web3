@@ -31,23 +31,42 @@ export function TokenSale() {
   return (
     <div className="bg-[--bg-primary] min-h-screen relative overflow-hidden flex flex-col">
       
-      {/* Top Blend Gradient */}
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[--bg-primary] via-[--bg-primary]/50 to-transparent z-20 pointer-events-none" />
+      {/* Immersive Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-[1000px] pointer-events-none overflow-hidden">
+        {/* Animated Gradient Orbs */}
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.2, 1],
+            x: [0, 50, 0],
+            y: [0, -30, 0]
+          }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-40 -left-40 w-[800px] h-[800px] bg-[--brand]/20 blur-[150px] rounded-full"
+        />
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.3, 1],
+            x: [0, -70, 0],
+            y: [0, 40, 0]
+          }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-20 -right-40 w-[600px] h-[600px] bg-blue-500/10 blur-[120px] rounded-full"
+        />
+        
+        {/* High Wavy Elements */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.15 }}
+          transition={{ duration: 2 }}
+          className="absolute top-0 left-0 w-full h-full"
+        >
+          <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
+            <path fill="var(--brand)" d="M0,0L48,42.7C96,85,192,171,288,186.7C384,203,480,149,576,122.7C672,96,768,96,864,122.7C960,149,1056,203,1152,213.3C1248,224,1344,192,1392,176L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+          </svg>
+        </motion.div>
+      </div>
 
-      {/* Wavy Background Elements with subtle motion */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.2 }}
-        transition={{ duration: 2 }}
-        className="absolute top-0 left-0 w-full h-[600px] pointer-events-none"
-      >
-        <svg viewBox="0 0 1440 320" className="w-full h-full">
-           <path fill="var(--brand)" fillOpacity="0.5" d="M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,144C672,139,768,181,864,181.3C960,181,1056,139,1152,122.7C1248,107,1344,117,1392,122.7L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
-           <path fill="var(--brand)" fillOpacity="0.2" d="M0,64L60,101.3C120,139,240,213,360,224C480,235,600,181,720,149.3C840,117,960,107,1080,128C1200,149,1320,203,1380,229.3L1440,256L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
-        </svg>
-      </motion.div>
-
-      <div className="flex-1 max-w-7xl mx-auto px-4 md:px-6 w-full flex flex-col justify-center pt-32 md:pt-48 pb-20 z-10">
+      <div className="flex-1 max-w-7xl mx-auto px-4 md:px-6 w-full flex flex-col justify-center pt-24 md:pt-32 pb-20 z-10">
         <motion.div 
           variants={containerVariants}
           initial="hidden"
